@@ -27,10 +27,10 @@ export function SplitScreen({ data, theme, lang }: SplitScreenProps) {
   let idx = 0;
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", height: "calc(100% - 100px)", gap: 0 }}>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", height: "100%", gap: 0 }}>
       <div style={{ padding: "24px 32px", overflow: "hidden" }}>
         {cats.map((cat) => (
-          <div key={cat.name} style={{ marginBottom: 28 }}>
+          <div key={cat.name} style={{ marginBottom: 16 }}>
             <h3
               style={{
                 fontFamily: "'Playfair Display', serif",
@@ -42,9 +42,9 @@ export function SplitScreen({ data, theme, lang }: SplitScreenProps) {
             >
               {cat.name}
             </h3>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
               {cat.items.map((item) => (
-                <MenuItemCard key={item.id} item={item} theme={theme} lang={lang} layout="list" animDelay={idx++ * 50} />
+                <MenuItemCard key={item.id} item={item} theme={theme} lang={lang} layout="compact" animDelay={idx++ * 50} />
               ))}
             </div>
           </div>
